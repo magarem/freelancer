@@ -1,0 +1,94 @@
+{
+  "navigationBar": {
+      "title": "Radhe",
+      "menu": {
+          "name": {
+              "portfolio": "trabalhos",
+              "about": "eu mesmo",
+              "contact": "me chama!"
+          }
+      }
+  },
+  "masthead": {
+      "avatar": "https://images.unsplash.com/photo-1512310604669-443f26c35f52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "heading": "Hadhe",
+      "subheading": "Krsna"
+  },
+  "portfolio": {
+      "heading": "Portfolio",
+      "grid": {
+          "items": [
+              {
+                  "title": "cabin",
+                  "img": "theme1/img/portfolio/cabin.png",
+                  "img": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                  "txt": "cabin test txt"
+              },
+              {
+                  "title": "cake",
+                  "img": "theme1/img/portfolio/cake.png",
+                  "img": "https://image.shutterstock.com/z/stock-photo-beautiful-woman-stretching-isolated-over-white-background-1580821639.jpg",
+                  "txt": "cake test txt"
+              },
+              {
+                  "title": "cirsus",
+                  "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+                  "txt": "circus test txt"
+              },
+              {
+                  "title": "game",
+                  "img": "theme1/img/portfolio/game.png",
+                  "txt": "game test txt"
+              },
+              {
+                  "title": "safe",
+                  "img": "theme1/img/portfolio/safe.png",
+                  "txt": "safe test txt"
+              },
+              {
+                  "title": "submarine",
+                  "img": "theme1/img/portfolio/submarine.png",
+                  "txt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+              }
+          ]
+      }
+  },
+  "about": {
+      "heading": "Sobre",
+      "txt1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.",
+      "txt2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+  },
+  "contactme": {
+      "heading": "Entre em contato",
+      "field": {
+          "name": "nome",
+          "email": "email",
+          "phone": "fone",
+          "message": "Mensagem",
+          "send": "Enviar"
+      }
+  },
+  "footer": {
+      "location": {
+          "heading": "Local",
+          "txt": "Caraíva"
+      },
+      "socialmidia": {
+          "heading": "Social links",
+          "link": {
+              "instagram": "111",
+              "facebook": "222",
+              "twitter": "33",
+              "linkedin": "44"
+          }
+      },
+      "footerabout": {
+          "heading": "Sobre",
+          "txt": "Maguetão"
+      },
+      "copyright": {
+          "heading": "Magaweb",
+          "link": "http://magaweb.com.br"
+      }
+  }
+}

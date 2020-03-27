@@ -4,10 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+var device = require('express-device');
+app.use(device.capture());
+
+app.get('/hello',function(req,res) {
+  res.send("Hi to "+req.device.type+" User");
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
