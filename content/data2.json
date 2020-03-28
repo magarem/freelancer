@@ -1,6 +1,6 @@
 {
   "navigationBar": {
-      "title": "Radhe",
+      "title": "Krsna",
       "menu": {
           "name": {
               "portfolio": "trabalhos",
@@ -10,7 +10,7 @@
       }
   },
   "masthead": {
-      "avatar": "https://www.w3schools.com/howto/img_avatar2.png",
+      "avatar": "https://www.w3schools.com/howto/img_avatar.png",
       "heading": "Hadhe",
       "subheading": "Krsna"
   },
@@ -25,13 +25,19 @@
                   "txt": "cabin test txt"
               },
               {
+                  "title": "cake",
+                  "img": "theme1/img/portfolio/cake.png",
+                  "img": "https://image.shutterstock.com/z/stock-photo-beautiful-woman-stretching-isolated-over-white-background-1580821639.jpg",
+                  "txt": "cake test txt"
+              },
+              {
                   "title": "cirsus",
                   "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
                   "txt": "circus test txt"
               },
               {
                   "title": "game",
-                  "img": "http://clinicalifecare.com.br/wp-content/uploads/2017/05/Drenagem-Linf%C3%A1tica-no-Rio-de-Janeiro.jpg",
+                  "img": "theme1/img/portfolio/game.png",
                   "txt": "game test txt"
               },
               {
@@ -43,21 +49,6 @@
                   "title": "submarine",
                   "img": "theme1/img/portfolio/submarine.png",
                   "txt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
-              },
-              {
-                  "title": "cirsus",
-                  "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
-                  "txt": "circus test txt"
-              },
-              {
-                  "title": "cirsus",
-                  "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
-                  "txt": "circus test txt"
-              },
-              {
-                  "title": "cirsus",
-                  "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
-                  "txt": "circus test txt"
               }
           ]
       }

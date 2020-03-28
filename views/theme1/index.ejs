@@ -17,7 +17,22 @@
 
   <!-- Theme CSS -->
   <link href="theme1/css/freelancer.min.css" rel="stylesheet">
-
+  <style>
+    .image-cropper {
+      width: 260px;
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+    .profile-pic {
+      display: inline;
+      margin: 0 auto;
+      /* margin-left: -25%; //centers the image */
+      height: 100%;
+      width: auto;
+    }
+  </style>
 </head>
 
 <body id="page-top">
@@ -51,8 +66,10 @@
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5 rounded-circle" src="<%= data.masthead.avatar %>" alt="">
-
+      <!-- <img class="masthead-avatar mb-5 rounded-circle" src="<%= data.masthead.avatar %>" alt=""> -->
+      <div class="image-cropper mb-5">
+        <img src="<%= data.masthead.avatar %>" alt="avatar" class="profile-pic">
+      </div>
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0"><%= data.masthead.heading %></h1>
 
@@ -72,8 +89,8 @@
   </header>
 
   <!-- Portfolio Section -->
-  <section class="page-section portfolio" id="portfolio">
-    <div class="container">
+  <section class="page-section portfolio" id="portfolio" >
+    <div class="container" >
 
       <!-- Portfolio Section Heading -->
       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
@@ -106,23 +123,40 @@
             background-position: center;
           }
         </style>
+
         <% data.portfolio.grid.items.forEach(function(item, index){ %>
-          <!-- Portfolio Item 1 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal<%= index + 1 %>">
-              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
+
+          <%if (device == 'desktop') {%>
+            <!-- Portfolio Item <%=index%> -->
+            <div class="col-md-6 col-lg-4 phone_style_1">
+              <div class="portfolio-item mx-auto phone_style_2" style="" data-toggle="modal" data-target="#portfolioModal<%= index + 1 %>">
+                <!-- <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white">
+                    <i class="fas fa-plus fa-3x"></i>
+                  </div>
+                </div> -->
+                <div class="_jjzlb" style="background-image:url('<%= item.img %>');"></div>
+                <h2 style="text-align: center"><%= item.title %></h2>
               </div>
-              <div class="_jjzlb" style="background-image:url('<%= item.img %>');">
-              </div>
-              <!-- <div id=content>
-                <img class="img-fluid_ x"  src="<%= item.img %>" alt="">
-              </div> -->
             </div>
-          </div>
-        <% }) %>
+          <% } %>
+
+          <%if (device == 'phone') {%>
+            <!-- Portfolio Item phone <%=index%> -->
+            <div class="col-12 phone_style_1" style="padding-right: 0px; padding-left: 0px;">
+              <div class="portfolio-item mx-auto phone_style_2" style="border-radius: 0px;" data-toggle="modal" data-target="#portfolioModal<%= index + 1 %>">
+                <img style="width: 100%;" src="<%= item.img %>" alt="">
+                <h2 style="text-align: center; font-size: 22px"><%= item.title %></h2>
+              </div>
+            </div><br><br>
+
+
+
+          <% } // if%>
+
+      <% }) //Foreach%>
+
+
       </div>
       <!-- /.row -->
 
@@ -291,9 +325,11 @@
   <%}%>
   </style>
   <%
+    var topButton = ''
     var add = ''
     var addImg = ''
     if (device !== 'desktop') {
+      topButton = 'visibility: hidden'
       add = 'padding-right: 0px; padding-left: 0px;'
       addImg = 'border-radius: 10px 10px 0px 0px'
    }
@@ -304,13 +340,11 @@
   <div class="portfolio-modal modal fade" id="portfolioModal<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
-        <% if (device == 'desktop') { %>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-              <i class="fas fa-times"></i>
-            </span>
-          </button>
-        <% } %>
+        <button style='position:absolute; top:-10px; left:-235px;' _style="<%=topButton%>" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times-circle" style='font-size: 25px;'></i>
+          </span>
+        </button>
         <div class="modal-body text-center">
           <div class="container">
             <div class="row justify-content-center">

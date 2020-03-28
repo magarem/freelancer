@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var data = require('../content/data.json');
+
 
 /* GET home page. */
 var txt_example = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
@@ -74,7 +74,8 @@ var txt_example = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mol
 //   }
 // }
 
-router.get('/', function(req, res, next) {
+router.get('/:siteData', function(req, res, next) {
+  var data = require('../content/' + req.params.siteData + '.json');
   res.render('theme1/index', {device: req.device.type, data: data, json1: JSON.stringify(data, undefined, 4) });
 });
 
