@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tree View</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+      body {
+        font-family: Menlo, Consolas, monospace;
+        color: #444;
+      }
+      .item {
+        cursor: pointer;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      ul {
+        padding-left: 1em;
+        line-height: 1.5em;
+        list-style-type: dot;
+      }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- item template -->
+    <script type="text/x-template" id="item-template">
+      <li>
+        <div
+          :class="{bold: isFolder}"
+          @click="toggle"
+          @dblclick="makeFolder">
+          {{ item.name }}
+
+          <span v-if="isFolder">[{{ isOpen ? '-' : '+' }}]</span>
+        </div>
+        <input v-if="item.form && item.form !== 'file'" type=text name=aa value=item.form>
+        <div v-if="item.form === 'file'">
+          <input  type=file name=aa value=item.form>
+
+        </div>
+        <ul v-show="isOpen" v-if="isFolder">
+          <tree-item
+            class="item"
+            v-for="(child, index) in item.children"
+            :key="index"
+            :item="child"
+
+          ></tree-item>
+          <!--li class="add" @click="$emit('add-item', item)">+</li-->
+        </ul>
+      </li>
+    </script>
+  </head>
+  <body>
+    <p>(You can double click on an item to turn it into a folder.)</p>
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default" style="height:350px;width:400px;">
+                <div class="panel-heading"> 1</div>
+                    <div class="panel-body">
+                      <!-- the demo root element -->
+                      <ul id="demo">
+                        <tree-item
+                          class="item"
+                          :item="treeData"
+                          @make-folder="makeFolder"
+                          @add-item="addItem"
+                        ></tree-item>
+                      </ul>
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default" style="height:350px;width:400px;">
+                <div class="panel-heading"> 2</div>
+                    <div class="panel-body">
+                      <form>
+                        <div class="form-group row">
+                          <label for="text1" class="col-4 col-form-label">topbar > nome</label>
+                          <div class="col-8">
+                            <input id="text1" name="text1" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      // demo data
+      var treeData = {
+      name: "Site",
+      children: [{
+        name: "Top bar",
+        children: [
+          {name: "nome", form: 'topbar' },
+          {name: "Menu",
+            children: [
+              {name: "Portfolio", form: 'porfolio'},
+              {name: "Sobre", form: 'Sobre' },
+              {name: "Contato", form: 'porfolio' },
+            ]
+          }
+        ]
+      },{name: "Master Head",
+         children: [
+        {name: "Avatar", form: 'file' }, {name: "Titulo"}, {name: "Sub Titulo"}]},
+        {name: "Portfolio",
+           children: [
+             {name: 'item',
+                children:[
+                    {name: "Avatar", form: 'file' }, {name: "Titulo"}, {name: "Sub Titulo"}
+                ]
+              }
+            ]
+        },
+        {name: "About",
+             children: [
+            {name: "txt1" }, {name: "txt2"}]}
+    ]
+  };
+
+      // define the tree-item component
+      Vue.component("tree-item", {
+        template: "#item-template",
+        props: {
+          item: Object
+        },
+        data: function() {
+          return {
+            isOpen: false
+          };
+        },
+        computed: {
+          isFolder: function() {
+            return this.item.children && this.item.children.length;
+          }
+        },
+        methods: {
+          toggle: function() {
+            if (this.isFolder) {
+              this.isOpen = !this.isOpen;
+            }
+          },
+          makeFolder: function() {
+            if (!this.isFolder) {
+              this.$emit("make-folder", this.item);
+              this.isOpen = true;
+            }
+          }
+        }
+      });
+
+      // boot up the demo
+      var demo = new Vue({
+        el: "#demo",
+        data: {
+          treeData: treeData
+        },
+        methods: {
+          makeFolder: function(item) {
+            Vue.set(item, "children", []);
+            this.addItem(item);
+          },
+          addItem: function(item) {
+            item.children.push({
+              name: "new stuff"
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

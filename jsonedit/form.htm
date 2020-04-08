@@ -1,0 +1,196 @@
+<style media="screen">
+  body, input, .submit{
+    padding-top: 10px;
+    text-align: center;
+    font-size:40px
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<body>
+  <div id="app">
+
+  <form class="" action="index.html" method="post">
+
+
+      <div v-for="(value, name) in form">
+        <div v-if="typeof value == 'object'"><b>{{name}}</b></div>
+        <div v-if="typeof value !== 'object'">
+          <label for="name">{{name }}</label><br>
+          <input type="text" id="" name="name" v-model="value"><br>
+          <br>
+        </div>
+        <div v-if="typeof value == 'object'">
+          <div v-for="(value, name) in value">
+            <label for="name">{{ name }}</label><br>
+            <input v-if="typeof value !== 'object'" type="text" id="" name="name" v-model="value"><br>
+            <div v-if="typeof value == 'object'">
+              <div v-for="(value, name) in value">
+                <label for="name">{{ name }}</label><br>
+                <input type="text" id="" name="name" v-model="value"><br>
+
+                <div v-for="(value, name) in value">
+                  <label for="name">{{ name }}</label><br>
+                  <input v-if="typeof value !== 'object'" type="text" id="" name="name" v-model="value"><br>
+                  <div v-if="typeof value == 'object'">
+                    <div v-for="(value, name) in value">
+                      <label for="name">{{ name }}</label><br>
+                      <input type="text" id="" name="name" v-model="value"><br>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    <input type="submit" id="submit" value="Enviar"  >
+  </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script >
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+
+        message: 'Hello Vue!',
+        // form: {
+        //   nome: 'marcelo',
+        //   fone: ['12121', '9999','2342423'],
+        //   email: 'contato@teste.com',
+        //   endereço: {
+        //
+        //     bairro: 'barra',
+        //     numero: '22',
+        //
+        //   }
+        // }
+        form: JSON.parse(`
+          { "title": "Radhe Krsna",
+            "navigationBar": {
+                "title": "Radhe Krsna",
+                "menu": {
+
+                        "portfolio": "trabalhos",
+                        "about": "eu mesmo",
+                        "contact": "me chama!"
+
+                }
+            },
+            "masthead": {
+                "avatar": "https://www.w3schools.com/howto/img_avatar2.png",
+                "heading": "Hadhe",
+                "subheading": "Krsna"
+            },
+            "portfolio": {
+                "heading": "Portfolio",
+                "grid": {
+                    "items": [
+                        {
+                            "title": "cabin",
+                            "img": "theme1/img/portfolio/cabin.png",
+                            "img": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                            "txt": "cabin test txt"
+                        },
+                        {
+                            "title": "cirsus",
+                            "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+                            "txt": "circus test txt"
+                        },
+                        {
+                            "title": "game",
+                            "img": "http://clinicalifecare.com.br/wp-content/uploads/2017/05/Drenagem-Linf%C3%A1tica-no-Rio-de-Janeiro.jpg",
+                            "txt": "game test txt"
+                        },
+                        {
+                            "title": "safe",
+                            "img": "theme1/img/portfolio/safe.png",
+                            "txt": "safe test txt"
+                        },
+                        {
+                            "title": "submarine",
+                            "img": "theme1/img/portfolio/submarine.png",
+                            "txt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+                        },
+                        {
+                            "title": "cirsus",
+                            "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+                            "txt": "circus test txt"
+                        },
+                        {
+                            "title": "cirsus",
+                            "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+                            "txt": "circus test txt"
+                        },
+                        {
+                            "title": "cirsus",
+                            "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+                            "txt": "circus test txt"
+                        }
+                    ]
+                }
+            },
+            "about": {
+                "heading": "Sobre",
+                "txt1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.",
+                "txt2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+            },
+            "contactme": {
+                "heading": "Entre em contato",
+                "field": {
+                    "name": "nome",
+                    "email": "email",
+                    "phone": "fone",
+                    "message": "Mensagem",
+                    "send": "Enviar"
+                }
+            },
+            "footer": {
+                "location": {
+                    "heading": "Local",
+                    "txt": "Caraíva"
+                },
+                "socialmidia": {
+                    "heading": "Social links",
+                    "link": {
+                        "instagram": "111",
+                        "facebook": "222",
+                        "twitter": "33",
+                        "linkedin": "44"
+                    }
+                },
+                "footerabout": {
+                    "heading": "Sobre",
+                    "txt": "Maguetão"
+                },
+                "copyright": {
+                    "heading": "Magaweb",
+                    "link": "http://magaweb.com.br"
+                }
+            }
+          }
+
+
+          `)
+      }
+
+    })
+  </script>
+</body>

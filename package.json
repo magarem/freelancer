@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^3.0.1",
@@ -15,6 +16,7 @@
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "nightmare": "^3.0.2",
-    "screenres": "^2.0.1"
+    "screenres": "^2.0.1",
+    "type-detect": "^4.0.8"
   }
 }

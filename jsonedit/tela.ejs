@@ -1,0 +1,45 @@
+<style media="screen">
+  body {
+    background-color: black
+  }
+  ul,li {
+    font-size: 30px;
+    font-family: monospace;
+    color: white;
+    cursor: pointer;
+    list-style-type: none;
+  }
+  input {
+    background-color: #d1d1d1;
+    font-size: 25px;
+    width: 500px;
+  }
+  .folder {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: monospace;
+    color: white
+  }
+  ul li ul {
+    display: none;
+  }
+
+</style>
+<body>
+  <%- tree %>
+  <script>
+    var expander = document.querySelectorAll('.expand');
+
+    for (var i = 0; i < expander.length; ++i) {
+      expander[i].onclick = function() {
+        var ul = this.parentElement.querySelectorAll('ul')[0];
+
+        if (ul.offsetHeight > 0) {
+          ul.style.display = 'none';
+        } else {
+          ul.style.display = 'block';
+        }
+      }
+    }
+  </script>
+</body>

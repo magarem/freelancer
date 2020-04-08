@@ -1,13 +1,16 @@
-{
-  "navigationBar": {
-      "title": "Radhe",
-      "menu": {
-          "name": {
+{"site":
+  {"info": {
+    "title": "Radhe Krsna"
+  },
+  "top bar": {
+      "title": "Radhe Krsna",
+
+        "name":{
               "portfolio": "trabalhos",
               "about": "eu mesmo",
               "contact": "me chama!"
-          }
-      }
+            }
+    
   },
   "masthead": {
       "avatar": "https://www.w3schools.com/howto/img_avatar2.png",
@@ -16,7 +19,7 @@
   },
   "portfolio": {
       "heading": "Portfolio",
-      "grid": {
+
           "items": [
               {
                   "title": "cabin",
@@ -60,7 +63,7 @@
                   "txt": "circus test txt"
               }
           ]
-      }
+
   },
   "about": {
       "heading": "Sobre",
@@ -100,4 +103,5 @@
           "link": "http://magaweb.com.br"
       }
   }
+}
 }
