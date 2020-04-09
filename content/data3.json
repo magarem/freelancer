@@ -1,0 +1,9 @@
+{
+  "name":"Timothy",
+  "age":35,
+  "address":{
+        "street":"1 Main St",
+        "city": "Montreal"
+  },
+  "interests":["cooking", "biking"]
+}

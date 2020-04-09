@@ -1,0 +1,18 @@
+<script>
+  function arrayTest(y){
+    // console.log(y);
+    var ret = []
+    y.forEach(function(o){
+      ret.push(o.split('.').map(function(x){if (x == +x) {return '[' + x + ']'} else {return x}}).join('.'))
+    })
+    return ret
+
+  }
+
+  console.log(arrayTest(["site.info.title",
+          "site.topbar.3.title",
+          "site.topbar.name.portfolio",
+          "site.topbar.name.about"]))
+
+
+</script>

@@ -1,0 +1,101 @@
+<style>
+  body{background-color: black;}
+</style>
+<script>
+  // htmlContent = `
+  //   <ul>
+  //     <li>teste1
+  //       <ul>
+  //         <li>teste1.1
+  //           <ul>
+  //             <li>teste2.1</li>
+  //             <li>teste2.2</li>
+  //           </ul>
+  //         </li>
+  //         <li>teste1.2</li>
+  //       </ul>
+  //     </li>
+  //     <li>teste2</li>
+  //   </ul>
+  // `
+  htmlContent = `
+    <ul>
+      <li><a id=ul-0-li-0-a href=#>teste.1</a>:<input id=ul-0-li-0-input style="margin-left: 2px;" type=text value="Jay!!! Radhe !!!"></li>
+      <li><a id=ul-0-li-1-a href=#>teste.2</a>:<input id=ul-0-li-1-input style="margin-left: 2px;" type=text value="krsna">
+        <ul>
+          <li><a href=#>teste2.1</a>:<input style="margin-left: 2px;" type=text value="Jay!!! Radhe !!!"></li>
+        </ul>
+      </li>
+      <li><a href=#>teste.4</a>:<input style="margin-left: 2px;" type=text value="krsna"></li>
+      <li><a href=#>teste.5</a>:<input style="margin-left: 2px;" type=text value="krsna"></li>
+      <li><a href=#>teste.6</a>:<input style="margin-left: 2px;" type=text value="krsna"></li>
+      <li><a href=#>teste.7</a>:<input style="margin-left: 2px;" type=text value="krsna"></li>
+    </ul>
+  `
+  let parser = new DOMParser();
+  let parsedHtml = parser.parseFromString(htmlContent, 'text/html');
+  console.log('0>>>', parsedHtml);
+
+  for (t=0; t<10; t++){
+    if (parsedHtml.getElementById('ul-0-li-' + t + '-a') == null) break
+    console.log(t + '>>>', parsedHtml.getElementById('ul-0-li-' + t + '-a').innerHTML);
+  }
+  // console.log('2>>>', parsedHtml.getElementById("ul-0-li-0-input").value);
+
+
+  // The src of the first image:
+  // let firstImg = parsedHtml.images[0].src;
+  let liElements = []
+  let json_str = {}
+  // The li elements of the second ul element:
+  function ll(xx){
+
+    console.log('xx', parsedHtml);
+    console.log('--xx', parsedHtml.getElementsByTagName("ul")[0]);
+  liElements[0] = parsedHtml.getElementsByTagName("ul")[0];
+
+  li_s = liElements[0].getElementsByTagName("li")
+  Array.from(li_s).forEach(function(item){
+    // liElements[1] = liElements[0].getElementsByTagName("li")[0];
+    key = item.getElementsByTagName("a")[0].innerHTML
+    if (item.getElementsByTagName("ul")[0]){
+      console.log('!', item.getElementsByTagName("ul")[0]);
+      ll(item.getElementsByTagName("ul")[0])
+    }
+    //   console.log('>ul');
+    //   li_s = item.getElementsByTagName("li")
+    //   Array.from(li_s).forEach(function(item){
+    //     key2 = item.getElementsByTagName("a")[0].innerHTML
+    //     input2 = item.getElementsByTagName("input")[0].value;
+    //     js2[key2] = input2
+    //     console.log(key);
+    //     json_str[key] = js2[key2]
+    //   })
+    //
+    // }
+    //   li_s = item.getElementsByTagName("ul")[0].getElementsByTagName("li")
+    //   Array.from(li_s).forEach(function(item){
+    //       if (item.getElementsByTagName("input")[0].value){
+    //         json_str[key] = {item[value]:item.getElementsByTagName("input")[0].value}
+    //       }else{
+    //         json_str[key] = {json_str[item.getElementsByTagName("input")[0].value]:'?'}
+    //       }
+    //   })
+    // }
+    // liElements[1] = item.getElementsByTagName("ul")[0];
+    // liElements[2] = item.getElementsByTagName("a")[0];
+    liElements[3] = item.getElementsByTagName("input")[0].value;
+console.log(key);
+    json_str[key] = liElements[3]
+
+  })
+}
+
+  // ll(htmlContent)
+// console.log(json_str);
+  //
+  // // console.log(liElements[0]);
+  // console.log(liElements[1]);
+  // console.log('2:' + liElements[2]);
+  // console.log(JSON.stringify(json_str));
+</script>

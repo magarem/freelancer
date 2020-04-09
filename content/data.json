@@ -2,7 +2,7 @@
   {"info": {
     "title": "Jay!!! Radhe !!!"
   },
-  "top bar": {
+  "topbar": {
       "title": "Radhe Krsna",
 
         "name":{
@@ -72,7 +72,7 @@
   },
   "contactme": {
       "heading": "Entre em contato",
-      "field": {
+      "fields": {
           "name": "nome",
           "email": "email",
           "phone": "fone",

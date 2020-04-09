@@ -19,7 +19,7 @@
   .q{
     /* list-style-type: square; */
   }
-  input {
+  input, button {
     background-color: black;
     font-size: 25px;
     width: 600px;
@@ -41,10 +41,16 @@
 
 </style>
 <body>
-  <%- tree %>
+  <form onsubmit="submitForm(event)">
+    <div id=main>
+      <%- tree %>
+      <input type="submit" onclick="save()" value="save"><br><br>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
   <script>
     var expander = document.querySelectorAll('.expand');
-
     for (var i = 0; i < expander.length; ++i) {
       expander[i].onclick = function() {
         var ul = this.parentElement.querySelectorAll('ul')[0];
@@ -56,5 +62,44 @@
         }
       }
     }
+
+    //
+    // Ids
+    //
+    var data = <%- data %>
+    var ids = <%- ids %>
+
+    console.log(data.site.info.title)
+    // function save(){
+    //   ids.forEach(function(t){
+    //     if (document.getElementById(t).value){
+    //       value = document.getElementById(t).value
+    //
+    //       //Testing if is a number (array index)
+    //       // if (t.indexOf('[')){
+    //       //   console.log('data.' + t + ' = "' + value + '"');
+    //       //   eval('data.'+ t + ' = "' + value + '"')
+    //       // }
+    //
+    //
+    //       console.log('data.' + t + ' = "' + value + '"');
+    //       eval('data.'+ t + ' = "' + value + '"')
+    //     }
+    //   })
+    //   //console.log(site);
+    // }
+
+    function submitForm(event){
+      event.preventDefault();
+      ids.forEach(function(t){
+        if (event.target[t]){
+          value = event.target[t].value
+          console.log('data.' + t + ' = "' + value + '"');
+          eval( 'data.' + t + ' = "' + value + '"')
+        }
+      })
+      console.log(data);
+    }
+
   </script>
 </body>
