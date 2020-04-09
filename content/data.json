@@ -1,107 +1,103 @@
-{"site":
-  {"info": {
-    "title": "Jay!!! Radhe !!!"
-  },
-  "topbar": {
+{
+  "site": {
+    "info": {
+      "title": "Oi!!! Vou dormir"
+    },
+    "topbar": {
       "title": "Radhe Krsna",
-
-        "name":{
-              "portfolio": "trabalhos",
-              "about": "eu mesmo",
-              "contact": "me chama!"
-            }
-
-  },
-  "masthead": {
+      "name": {
+        "portfolio": "trabalhos",
+        "about": "eu mesmo",
+        "contact": "me chama!"
+      }
+    },
+    "masthead": {
       "avatar": "https://www.w3schools.com/howto/img_avatar2.png",
       "heading": "Hadhe",
       "subheading": "Krsna"
-  },
-  "portfolio": {
+    },
+    "portfolio": {
       "heading": "Portfolio",
-
-          "items": [
-              {
-                  "title": "cabin",
-                  "img": "theme1/img/portfolio/cabin.png",
-                  "img": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-                  "txt": "cabin test txt"
-              },
-              {
-                  "title": "cirsus",
-                  "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
-                  "txt": "circus test txt"
-              },
-              {
-                  "title": "game",
-                  "img": "http://clinicalifecare.com.br/wp-content/uploads/2017/05/Drenagem-Linf%C3%A1tica-no-Rio-de-Janeiro.jpg",
-                  "txt": "game test txt"
-              },
-              {
-                  "title": "safe",
-                  "img": "theme1/img/portfolio/safe.png",
-                  "txt": "safe test txt"
-              },
-              {
-                  "title": "submarine",
-                  "img": "theme1/img/portfolio/submarine.png",
-                  "txt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
-              },
-              {
-                  "title": "cirsus",
-                  "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
-                  "txt": "circus test txt"
-              },
-              {
-                  "title": "cirsus",
-                  "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
-                  "txt": "circus test txt"
-              },
-              {
-                  "title": "cirsus",
-                  "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
-                  "txt": "circus test txt"
-              }
-          ]
-
-  },
-  "about": {
-      "heading": "Sobre",
+      "items": [
+        {
+          "title": "cabin",
+          "img": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "txt": "cabin test txt"
+        },
+        {
+          "title": "cirsus",
+          "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+          "txt": "circus test txt"
+        },
+        {
+          "title": "game",
+          "img": "http://clinicalifecare.com.br/wp-content/uploads/2017/05/Drenagem-Linf%C3%A1tica-no-Rio-de-Janeiro.jpg",
+          "txt": "game test txt"
+        },
+        {
+          "title": "Radharani!! o/",
+          "img": "theme1/img/portfolio/safe.png",
+          "txt": "safe test txt"
+        },
+        {
+          "title": "submarine",
+          "img": "theme1/img/portfolio/submarine.png",
+          "txt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+        },
+        {
+          "title": "cirsus",
+          "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+          "txt": "circus test txt"
+        },
+        {
+          "title": "cirsus",
+          "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+          "txt": "circus test txt"
+        },
+        {
+          "title": "cirsus",
+          "img": "https://thumbs.dreamstime.com/z/retrato-da-mulher-lindo-com-corpo-perfeito-no-biquini-na-praia-145131310.jpg",
+          "txt": "circus test txt"
+        }
+      ]
+    },
+    "about": {
+      "heading": "Sobre eu mesmo ;)",
       "txt1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.",
       "txt2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
-  },
-  "contactme": {
+    },
+    "contactme": {
       "heading": "Entre em contato",
       "fields": {
-          "name": "nome",
-          "email": "email",
-          "phone": "fone",
-          "message": "Mensagem",
-          "send": "Enviar"
+        "name": "nome",
+        "email": "email",
+        "phone": "fone",
+        "message": "Mensagem",
+        "send": "Enviar"
       }
-  },
-  "footer": {
+    },
+    "footer": {
       "location": {
-          "heading": "Local",
-          "txt": "Caraíva"
+        "heading": "Local oi Radhe & Krsna",
+        "txt": "caraíva viva"
       },
       "socialmidia": {
-          "heading": "Social links",
-          "link": {
-              "instagram": "111",
-              "facebook": "222",
-              "twitter": "33",
-              "linkedin": "44"
-          }
+        "heading": "Social links",
+        "link": {
+          "instagram": "111",
+          "facebook": "222",
+          "twitter": "33",
+          "linkedin": "44"
+        }
       },
       "footerabout": {
-          "heading": "Sobre",
-          "txt": "Maguetão"
+        "heading": "Sobre",
+        "txt": "MaguetÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o"
       },
       "copyright": {
-          "heading": "Magaweb",
-          "link": "http://magaweb.com.br"
+        "heading": "Magaweb",
+        "link": "http://magaweb.com.br"
       }
+    }
   }
-}
 }

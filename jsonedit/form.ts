@@ -1,4 +1,4 @@
-import { app, get } from 'https://denopkg.com/syumai/dinatra/mod.ts';
+import { app, post, get } from 'https://denopkg.com/syumai/dinatra@0.9.0/mod.ts';
 import { renderFile } from 'https://deno.land/x/dejs/mod.ts';
 const decoder = new TextDecoder('utf-8');
 function arrayTest(y: any){
@@ -43,7 +43,7 @@ let Mtree = {
 
 
          this.out += '<input id=' + aa + ' style="margin-left: 2px;" type=text value="' + value + '"></li>\n'
-         this.ids.push(this.keys.join('.'))
+         this.ids.push(aa)
          this.keys.pop()
          espaco--
        }
@@ -53,15 +53,27 @@ let Mtree = {
   }
 }
 
-
-
-
 app(
+  // post('/save',
+  //   async ({ params }) => {
+  //     console.log(params.data);
+  //     return 0
+  //   }
+  // ),
+  post('/save', ({ params }) => {
+    var site = {site: params.site}
+    var dataFileName = params.dataFileName
+    const encoder = new TextEncoder();
+    Deno.writeFile('../content/' + dataFileName, encoder.encode(JSON.stringify(site, null, 2)));
+    return `${site}!`
+  }),
   get('/:dataFile',
     async ({ params }) => {
       const data_ = decoder.decode(await Deno.readFile('../content/' + params.dataFile));
       const data = JSON.parse(data_);
-      console.log(data);
+
+      // console.log(JSON.stringify(data));
+
 
       Mtree.out = ''
       Mtree.build(data)

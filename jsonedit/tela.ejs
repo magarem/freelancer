@@ -40,12 +40,13 @@
   }
 
 </style>
+<meta charset="utf-8" />
 <body>
   <form onsubmit="submitForm(event)">
     <div id=main>
       <%- tree %>
-      <input type="submit" onclick="save()" value="save"><br><br>
-      <input type="submit" value="Submit">
+      <!-- <input type="submit" onclick="save()" value="save"><br><br> -->
+      <input type="submit" value="Salvar">
     </div>
   </form>
 
@@ -69,25 +70,13 @@
     var data = <%- data %>
     var ids = <%- ids %>
 
-    console.log(data.site.info.title)
-    // function save(){
-    //   ids.forEach(function(t){
-    //     if (document.getElementById(t).value){
-    //       value = document.getElementById(t).value
-    //
-    //       //Testing if is a number (array index)
-    //       // if (t.indexOf('[')){
-    //       //   console.log('data.' + t + ' = "' + value + '"');
-    //       //   eval('data.'+ t + ' = "' + value + '"')
-    //       // }
-    //
-    //
-    //       console.log('data.' + t + ' = "' + value + '"');
-    //       eval('data.'+ t + ' = "' + value + '"')
-    //     }
-    //   })
-    //   //console.log(site);
-    // }
+    function Get(url, val){
+      var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
+      xmlhttp.open("POST", url);
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xmlhttp.send(JSON.stringify(val));
+      alert('Dados salvos com sucesso!')
+    }
 
     function submitForm(event){
       event.preventDefault();
@@ -95,10 +84,17 @@
         if (event.target[t]){
           value = event.target[t].value
           console.log('data.' + t + ' = "' + value + '"');
-          eval( 'data.' + t + ' = "' + value + '"')
+          eval('data.' + t + ' = "' + value + '"')
         }
       })
+      data.dataFileName = 'data.json'
       console.log(data);
+      //
+      Get("/save", data)
+
+
+
+      // userAction()
     }
 
   </script>
