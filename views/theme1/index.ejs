@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title><%= data.title %></title>
+  <title><%= data.info.title %></title>
 
   <!-- Custom fonts for this theme -->
   <link href="theme1/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><div contentEditable="true"><%= data.navigationBar.title %></div></a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><div contentEditable="true"><%= data.topbar.title %></div></a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -48,13 +48,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio"><%= data.navigationBar.menu.name.portfolio %></a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio"><%= data.topbar.menu.portfolio %></a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about"><%= data.navigationBar.menu.name.about %></a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about"><%= data.topbar.menu.about %></a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact"><%= data.navigationBar.menu.name.contact %></a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact"><%= data.topbar.menu.contact %></a>
           </li>
         </ul>
       </div>
@@ -124,7 +124,7 @@
           }
         </style>
 
-        <% data.portfolio.grid.items.forEach(function(item, index){%>
+        <% data.portfolio.items.forEach(function(item, index){%>
 
           <% if (device == 'desktop') { %>
             <!-- Portfolio Item <%=index%> -->
@@ -225,36 +225,36 @@
           <form name="sentMessage" id="contactForm" novalidate="novalidate">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label><%= data.contactme.field.name %></label>
-                <input class="form-control" id="name" type="text" placeholder="<%= data.contactme.field.name %>" required="required" data-validation-required-message="<%= data.contactme.field.name %>">
+                <label><%= data.contactme.fields.name %></label>
+                <input class="form-control" id="name" type="text" placeholder="<%= data.contactme.fields.name %>" required="required" data-validation-required-message="<%= data.contactme.fields.name %>">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label><%= data.contactme.field.email %></label>
-                <input class="form-control" id="email" type="email" placeholder="<%= data.contactme.field.email %>" required="required" data-validation-required-message="<%= data.contactme.field.email %>">
+                <label><%= data.contactme.fields.email %></label>
+                <input class="form-control" id="email" type="email" placeholder="<%= data.contactme.fields.email %>" required="required" data-validation-required-message="<%= data.contactme.fields.email %>">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label><%= data.contactme.field.phone %></label>
-                <input class="form-control" id="phone" type="tel" placeholder="<%= data.contactme.field.phone %>" required="required" data-validation-required-message="<%= data.contactme.field.phone %>">
+                <label><%= data.contactme.fields.phone %></label>
+                <input class="form-control" id="phone" type="tel" placeholder="<%= data.contactme.fields.phone %>" required="required" data-validation-required-message="<%= data.contactme.fields.phone %>">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label><%= data.contactme.field.message %></label>
-                <textarea class="form-control" id="message" rows="5" placeholder="<%= data.contactme.field.message %>" required="required" data-validation-required-message="<%= data.contactme.field.message %>"></textarea>
+                <label><%= data.contactme.fields.message %></label>
+                <textarea class="form-control" id="message" rows="5" placeholder="<%= data.contactme.fields.message %>" required="required" data-validation-required-message="<%= data.contactme.fields.message %>"></textarea>
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton"><%= data.contactme.field.send %></button>
+              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton"><%= data.contactme.fields.send %></button>
             </div>
           </form>
         </div>
@@ -338,7 +338,7 @@
   %>
   <!-- Portfolio Modals -->
   <%
-  data.portfolio.grid.items.forEach(function(item, index){
+  data.portfolio.items.forEach(function(item, index){
   %>
   <!-- Portfolio Modal 1 -->
   <div class="portfolio-modal modal fade" id="portfolioModal<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">

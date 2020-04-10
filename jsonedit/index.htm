@@ -105,7 +105,7 @@
           @click="toggle"
           @dblclick="makeFolder">
           {{ item.name }}
-          <!-- <div @click="panel1==true">Painel1</div> -->
+          <div @click="panel1==true">Painel1</div>
           <span v-if="isFolder">[{{ isOpen ? '-' : '+' }}]</span>
         </div>
         <input v-if="item.form && item.form !== 'file'" type=text name=aa value=item.form>

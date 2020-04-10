@@ -1,0 +1,101 @@
+<style media="screen">
+  body {
+    background-color: black
+  }
+  ul {
+    font-size: 30px;
+    font-family: monospace;
+    color: white;
+    cursor: pointer;
+
+  }
+  li {
+    font-size: 30px;
+    font-family: monospace;
+    color: #EBCE78;
+    cursor: pointer;
+    list-style-type: none;
+  }
+  .q{
+    /* list-style-type: square; */
+  }
+  input, button {
+    background-color: black;
+    font-size: 25px;
+    width: 600px;
+    color: white;
+    border: 0
+  }
+  .folder {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: monospace;
+    color: white
+  }
+  ul li ul {
+    display: none;
+  }
+  .expand {
+    color: #61C2B9;
+  }
+
+</style>
+<meta charset="utf-8" />
+<body>
+  <form onsubmit="submitForm(event)">
+    <div id=main>
+      <%- tree %>
+      <!-- <input type="submit" onclick="save()" value="save"><br><br> -->
+      <input type="submit" value="Salvar">
+    </div>
+  </form>
+
+  <script>
+    var expander = document.querySelectorAll('.expand');
+    for (var i = 0; i < expander.length; ++i) {
+      expander[i].onclick = function() {
+        var ul = this.parentElement.querySelectorAll('ul')[0];
+
+        if (ul.offsetHeight > 0) {
+          ul.style.display = 'none';
+        } else {
+          ul.style.display = 'block';
+        }
+      }
+    }
+
+    //
+    // Ids
+    //
+    var data = <%- data %>
+    var ids = <%- ids %>
+
+    function Get(url, val){
+      var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
+      xmlhttp.open("POST", url);
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xmlhttp.send(JSON.stringify(val));
+      alert('Dados salvos com sucesso!')
+    }
+
+    function submitForm(event){
+      event.preventDefault();
+      ids.forEach(function(t){
+        if (event.target[t]){
+          value = event.target[t].value
+          console.log('data.' + t + ' = "' + value + '"');
+          eval('data.' + t + ' = "' + value + '"')
+        }
+      })
+      data.dataFileName = 'data.json'
+      console.log(data);
+      //
+      Get("/edit/save", data)
+
+
+
+      // userAction()
+    }
+
+  </script>
+</body>
